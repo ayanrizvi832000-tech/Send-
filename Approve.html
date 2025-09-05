@@ -3,61 +3,59 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Scam QR Code Generator with Approve Button</title>
+    <title>Approve Action</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif; 
             background: #07102a; 
             color: #e6eaf2; 
-            padding: 20px; 
-            text-align: center;
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh; 
+            margin: 0;
         }
-        input, button {
-            width: 100%; 
-            padding: 10px; 
-            margin-bottom: 10px; 
-            border-radius: 5px; 
-            border: 1px solid #ccc; 
+        .card {
+            background: #0d1a3a; 
+            padding: 28px; 
+            border-radius: 12px; 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.35); 
+            text-align: center; 
+            width: 320px; 
         }
         button {
+            padding: 14px 22px; 
+            font-size: 16px; 
+            border-radius: 8px; 
+            border: none; 
             background: #2f6bff; 
-            color: white; 
+            color: #fff; 
             cursor: pointer; 
+            width: 100%; 
+            transition: background 0.3s;
         }
-        #qrcode {
-            margin-top: 20px; 
+        button:disabled {
+            background: #aaa; /* Gray background for disabled button */
+            cursor: not-allowed; /* Change cursor for disabled state */
         }
     </style>
 </head>
 <body>
-    <h1>Scam QR Code Generator</h1>
-    <input type="text" id="text-input" placeholder="Enter your text or URL here" />
-    <button id="generate-btn">Generate QR Code</button>
-    <div id="qrcode"></div>
-
-    <h2>Approve Action</h2>
-    <button id="approveBtn">Approve</button>
+    <div class="card">
+        <h1>Approve Action</h1>
+        <button id="approveBtn">Approve</button>
+    </div>
 
     <script>
-        // QR Code Generation
-        $('#generate-btn').click(function() {
-            var text = $('#text-input').val();
-            $('#qrcode').html('QR Code generated for: ' + text); // Replace with QR code generation logic if needed
-        });
-
-        // Approve Button Logic
         const btn = document.getElementById("approveBtn");
         btn.addEventListener("click", () => {
             btn.disabled = true; // Disable the button
-            btn.style.background = "#aaa"; // Change button color to indicate processing
-            btn.innerText = "Processing..."; // Change button text
-
+            btn.innerText = "Processing..."; // Update button text
             setTimeout(() => {
-                btn.innerText = "Approved"; // Change text after processing
-                btn.style.background = "#4CAF50"; // Change button color to indicate approval
-            }, 2000); // Wait 2 seconds before executing
+                btn.innerText = "Approved"; // Change text to "Approved"
+                btn.style.background = "#4CAF50"; // Change color to indicate success
+            }, 2000); // Delay for 2 seconds
         });
     </script>
 </body>
