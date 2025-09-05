@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gift Site QR</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+</head>
+<body style="display:flex;justify-content:center;align-items:center;height:100vh;flex-direction:column;font-family:sans-serif;">
+  <h2>Scan to Open Gift Page</h2>
+  <div id="qrcode"></div>
+
+  <script>
+    $(document).ready(function() {
+      $('#qrcode').qrcode({
+        text: "https://ayanrizvi832000-tech.github.io/Send/index.html", 
+        width: 200,
+        height: 200
+      });
+    });
+  </script>
+</body>
+</html>
