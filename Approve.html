@@ -1,0 +1,55 @@
+```html
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Generate Scam QR Code Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #07102a;
+            color: #e6eaf2;
+            padding: 20px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background: #2f6bff;
+            color: white;
+            cursor: pointer;
+        }
+        #qrcode {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Scam QR Code Generator</h1>
+    <input type="text" id="text-input" placeholder="Enter scam URL or text here" />
+    <button id="generate-button">Generate QR Code</button>
+    <div id="qrcode"></div>
+
+    <script>
+        $(document).ready(function() {
+            $('#generate-button').click(function() {
+                var text = $('#text-input').val();
+                $('#qrcode').empty(); // Clear previous QR code
+                if (text) {
+                    $('#qrcode').qrcode(text);
+                } else {
+                    alert('Please enter a valid URL or text');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+```
